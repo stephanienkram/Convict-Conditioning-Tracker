@@ -35,12 +35,23 @@ mysql_query($q) or DIE('USER table was not created. '.mysql_error().'<br>');
 
 echo "USER table created...<br>";
 
+/*$q = "CREATE TABLE exercises
+(
+mid int NOT NULL AUTO_INCREMENT,
+description text NOT NULL,
+workout varchar(10) NOT NULL,
+userid int NOT NULL,
+PRIMARY KEY (mid)
+)";*/
+
 $q = "CREATE TABLE exercises
 (
-type varchar NOT NULL,
+type varchar(10) NOT NULL,
 level double NOT NULL,
+name varchar(15) NOT NULL,
 description text NOT NULL,
-picture varchar NOT NULL
+workout varchar(10) NOT NULL,
+picture varchar(20) NOT NULL
 )";
 
 mysql_query($q) or DIE('EXERCISES table was not created. '.mysql_error().'<br>');
@@ -49,10 +60,10 @@ echo "EXERCISES table created...<br>";
 
 $q = "CREATE TABLE progress
 (
-dateid int NOT NULL,
+dateid int NOT NULL AUTO_INCREMENT,
 date int NOT NULL,
 userid int NOT NULL,
-type varchar NOT NULL,
+type varchar(10) NOT NULL,
 level double NOT NULL,
 PRIMARY KEY (dateid)
 )";
