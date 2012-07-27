@@ -1,33 +1,34 @@
-<div id="pushup">
 <?php
 
-$level = 1.1;
+include('conf.php');
+session_start();
 
-$q = "SELECT * FROM exercises WHERE level = '$level'";
+if(isset($_GET['type'])){
 
-$r = mysql_query($q) or DIE('Exercise not fetched '.mysql_error());
+    $type = $_GET['type'];
+    $level = $_SESSION[$type];
 
+    $q = "SELECT * FROM exercises WHERE level = '$level' AND type='$type'";
+    $r = mysql_query($q) or DIE('Exercise not fetched '.mysql_error());
+    $r = mysql_fetch_array($r);
+
+    
+    $step = floor($r['level']);
+    $sub = $level - $step;
+    if ($sub == 0.3 && $step == 10) $difficulty = "Elite Standard";
+    else if ($sub == 0.3) $difficulty = "Progression Standard";
+    else if ($sub == 0.2) $difficulty = "Intermediate Standard";
+    else $difficulty = "Beginner Standard";
+    
+    echo $r['name'] . "<br>";
+    echo $difficulty . "<br>";
+    echo $r['description'] . "<br>";
+    echo $r['workout'];
+
+    echo "<form method='index.php' method='get'>";
+    echo "<input type='hidden' name='type' value='" . $type . "'>";
+    echo "<input type='hidden' name='level' value='" . $level . "'>";
+    echo "<input type='submit' value='I have completed this exercise!'>";
+}
 
 ?>
-</div>
-
-<div id="squat">
-Squat.
-</div>
-
-
-<div id="pullup">
-Pullup.
-</div>
-
-<div id="leg">
-Leg raises.
-</div>
-
-<div id="bridge">
-Bridge.
-</div>
-
-<div id="handstand">
-Handstand pushup.
-</div>

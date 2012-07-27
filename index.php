@@ -1,26 +1,34 @@
-<html>
-<head>
-<title>Convict Conditioning Tracker</title>
-<script src="jquery.js" type="text/javascript"></script>
-</head>
+<?php include('header.php'); ?>
 
-<body>
+<?php 
 
-<?php
-
-# check if logged in
-if(!$_SESSION['logged_in']){
+# if completed
+if($_GET['type']){
+    $type = $_GET['type'];
+    $level = (double)$_GET['level'] + .1;
+    $level_floor = floor($level);
+    if($level - $level_floor > .3){
+        $newlevel = $level_floor + 1.1;
+    } else {
+        $newlevel = $level;
+    }
     
+    $userid = $_SESSION['userid'];
+    
+    $q = "UPDATE users SET " . $type . "=" . $newlevel . " WHERE userid = '$userid'";
+    mysql_query($q) or DIE('Database could not update. '.mysql_error());
+    
+    $_SESSION[$type] = $newlevel;
+    
+    $date = date('Ymd');
+    
+    $q = "INSERT INTO progress (date, userid, type, level) VALUES ('$date', '$userid', '$type', '$level')";
+    mysql_query($q) or DIE('Progress not updated. '.mysql_error());
 }
 
 ?>
 
-<h2>Convict Conditioning Tracker</h2>
-<a href="stats.php">Stats</a><br>
-<a href="viewall.php">View All Tracks</a><br>
-
 Tracker:
-<form action="" method="">
 Exercise Track:
 <select name='exercise' id='exercise'>
 <option value='pushup'>Pushup</option>
@@ -37,11 +45,14 @@ Exercise Track:
 $("#exercise").click(function(evt) {
     evt.preventDefault();
     var value = $(this).val();
-    value = "#" + value;
-    $("#info").load("exercises.html "+value);
+    $("#info").load("exercises.php?type="+value);
 })
 </script>
 
 <div id="info">
 
 </div>
+
+</body>
+
+</html>
