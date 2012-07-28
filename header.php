@@ -22,7 +22,10 @@ if(!$_SESSION['logged_in']){
 ?>
 
 <h2>Convict Conditioning Tracker</h2>
+<div id="nav">
 <ul>
-<li><a href="stats.php">Stats</a><br>
-<li><a href="viewall.php">View All Tracks</a><br>
-<li><a href="logout.php">Logout</a><br>
+<li><a href="stats.php">Stats</a>
+<li><a href="viewall.php">View All Tracks</a>
+<li><a href="logout.php">Logout</a>
+</ul>
+</div>

@@ -20,15 +20,24 @@ if(isset($_GET['type'])){
     else if ($sub == 0.2) $difficulty = "Intermediate Standard";
     else $difficulty = "Beginner Standard";
     
-    echo $r['name'] . "<br>";
-    echo $difficulty . "<br>";
+    echo "<div id='left'>";
+    echo "<h2>" . $r['name'] . "</h2>" . $difficulty . "<br>";
+    #echo $difficulty . "<br>";
     echo $r['description'] . "<br>";
     echo $r['workout'];
-
+    
     echo "<form method='index.php' method='get'>";
     echo "<input type='hidden' name='type' value='" . $type . "'>";
     echo "<input type='hidden' name='level' value='" . $level . "'>";
     echo "<input type='submit' value='I have completed this exercise!'>";
+    echo "</div>";
+   
+   
+    echo "<div id='right'>";
+    echo "<img src='" . $r['picture'] . "'>";
+    echo "</div>";
+
+   
 }
 
 ?>

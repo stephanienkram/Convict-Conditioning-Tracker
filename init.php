@@ -40,7 +40,7 @@ type varchar(10) NOT NULL,
 level double NOT NULL,
 name varchar(30) NOT NULL,
 description text NOT NULL,
-workout varchar(10) NOT NULL,
+workout varchar(20) NOT NULL,
 picture varchar(20) NOT NULL
 )";
 
@@ -66,6 +66,10 @@ mysql_query("INSERT INTO users (username, password, pushup, squat, pullup, legra
 
 echo 'Admin created<br>';
 
-echo "DONE!!";
+echo "DONE!!<br>";
+
+include('populate.php');
+
+header('location:login.php');
 
 ?>

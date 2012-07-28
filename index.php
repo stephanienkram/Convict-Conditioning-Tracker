@@ -1,5 +1,7 @@
 <?php include('header.php'); ?>
 
+<div id="content">
+
 <?php 
 
 # if completed
@@ -28,8 +30,7 @@ if($_GET['type']){
 
 ?>
 
-Tracker:
-Exercise Track:
+<div id="select">
 <select name='exercise' id='exercise'>
 <option value='pushup'>Pushup</option>
 <option value='squat'>Squat</option>
@@ -38,19 +39,23 @@ Exercise Track:
 <option value='bridge'>Bridge</option>
 <option value='handstand'>Handstand Pushup</option>
 </select>
-
+</div>
 
 <script>
+$(document).ready(function() {
+    $("#text").load("exercises.php?type=pushup");
+});
 
 $("#exercise").click(function(evt) {
     evt.preventDefault();
     var value = $(this).val();
-    $("#info").load("exercises.php?type="+value);
+    $("#text").load("exercises.php?type="+value);
 })
 </script>
 
-<div id="info">
+<div id="text">
 
+</div>
 </div>
 
 </body>

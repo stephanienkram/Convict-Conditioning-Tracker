@@ -1,5 +1,7 @@
 /* STYLES.CSS FOR CONVICT CONDITIONING TRACKER */
 
+/* LOGIN CSS */
+
 body#loginbg {
 background-image:url('handstand.jpg');
 background-size:cover;
@@ -32,4 +34,68 @@ border-radius:20px;
 position:absolute;
 margin-top:50px;
 margin-left:120px;
+}
+
+/* REGULAR PAGES */
+
+body {
+font-family:sans-serif;
+}
+
+#nav {
+color:red;
+}
+
+#nav ul {
+list-style:none;
+}
+
+#nav li {
+display:inline;
+}
+
+#nav a {
+text-decoration:none;
+color:black;
+font-weight:bold;
+padding-left:30px;
+padding-right:30px;
+border:1px solid;
+}
+
+#content {
+margin-left:40px;
+margin-right:50px;
+padding:10px;
+border:1px solid;
+height:500px;
+}
+
+#exercise {
+color:black;
+border:white;
+border-radius:15px;
+padding:5px;
+}
+
+#exercise:focus {
+outline:none;
+font-weight:bold;
+}
+
+#select {
+border:solid 3px #cccccc;
+border-radius:5px;
+width:160px;
+}
+
+#left {
+width:50%;
+float:left;
+position:relative;
+}
+
+#right {
+float:right;
+position:relative;
 }
