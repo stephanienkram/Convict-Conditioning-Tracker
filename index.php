@@ -1,7 +1,5 @@
 <?php include('header.php'); ?>
 
-<div id="content">
-
 <?php 
 
 # if completed
@@ -9,7 +7,8 @@ if($_GET['type']){
     $type = $_GET['type'];
     $level = (double)$_GET['level'] + .1;
     $level_floor = floor($level);
-    if($level - $level_floor > .3){
+    $sub = $level - $level_floor;
+    if(abs($sub-0.4)<0.00001){
         $newlevel = $level_floor + 1.1;
     } else {
         $newlevel = $level;

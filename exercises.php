@@ -15,9 +15,9 @@ if(isset($_GET['type'])){
     
     $step = floor($r['level']);
     $sub = $level - $step;
-    if ($sub == 0.3 && $step == 10) $difficulty = "Elite Standard";
-    else if ($sub == 0.3) $difficulty = "Progression Standard";
-    else if ($sub == 0.2) $difficulty = "Intermediate Standard";
+    if (abs($sub-0.3)<0.00001 && $step == 10) $difficulty = "Elite Standard";
+    else if (abs($sub-0.3)<0.00001) $difficulty = "Progression Standard";
+    else if (abs($sub-0.2)<0.00001) $difficulty = "Intermediate Standard";
     else $difficulty = "Beginner Standard";
     
     echo "<div id='left'>";
@@ -36,8 +36,35 @@ if(isset($_GET['type'])){
     echo "<div id='right'>";
     echo "<img src='" . $r['picture'] . "'>";
     echo "</div>";
+    
+}    
+    
+if($_POST['type']){
+    echo "HELLO BITCHES";
+    $type = $_GET['type'];
+    $level = (double)$_GET['level'] + .1;
+    echo $level;
+    $level_floor = floor($level);
+    if($level - $level_floor > .3){
+        $newlevel = $level_floor + 1.1;
+    } else {
+        $newlevel = $level;
+    }
+    
+    $userid = $_SESSION['userid'];
+    
+    $q = "UPDATE users SET " . $type . "=" . $newlevel . " WHERE userid = '$userid'";
+    mysql_query($q) or DIE('Database could not update. '.mysql_error());
+    
+    $_SESSION[$type] = $newlevel;
+    
+    $date = date('Ymd');
+    
+    $q = "INSERT INTO progress (date, userid, type, level) VALUES ('$date', '$userid', '$type', '$level')";
+    mysql_query($q) or DIE('Progress not updated. '.mysql_error());
+}
 
    
-}
+
 
 ?>

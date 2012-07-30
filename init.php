@@ -40,7 +40,7 @@ type varchar(10) NOT NULL,
 level double NOT NULL,
 name varchar(30) NOT NULL,
 description text NOT NULL,
-workout varchar(20) NOT NULL,
+workout varchar(50) NOT NULL,
 picture varchar(20) NOT NULL
 )";
 

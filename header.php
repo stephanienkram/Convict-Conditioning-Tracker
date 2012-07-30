@@ -24,8 +24,13 @@ if(!$_SESSION['logged_in']){
 <h2>Convict Conditioning Tracker</h2>
 <div id="nav">
 <ul>
+<li><a href="index.php">Track</a>
 <li><a href="stats.php">Stats</a>
 <li><a href="viewall.php">View All Tracks</a>
 <li><a href="logout.php">Logout</a>
 </ul>
 </div>
+
+<div id="content">
+
+<div id="contentbox"></div>

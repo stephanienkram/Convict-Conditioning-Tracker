@@ -65,6 +65,9 @@ $_SESSION['message'] = "";
 </form>
 </table>
 
+<div id="explore">
+<a href="explore.php">Explore</a>
+</div>
 
 </div>
 
