@@ -1,12 +1,12 @@
 <?php 
 session_start();
-include('conf.php'); 
+include('conf/conf.php'); 
 ?>
 
 <html>
 <head>
 <title>Convict Conditioning Tracker</title>
-<link rel="stylesheet" text="text/css" href="styles.css"></link>
+<link rel="stylesheet" text="text/css" href="static/styles.css"></link>
 </head>
 
 <body id="loginbg">
@@ -66,7 +66,7 @@ $_SESSION['message'] = "";
 </table>
 
 <div id="explore">
-<a href="explore.php">Explore</a>
+<a href="explore/explore.php">Explore</a>
 </div>
 
 </div>

@@ -9,15 +9,15 @@ $description = "Wall pushups are the first step of the ten step series required 
 
 $description = mysql_real_escape_string($description);
 
-$q = "INSERT INTO exercises (type, level, name, description, workout, picture) VALUES ('pushup', 1.1, 'Wall Pushups', '$description', '1 set of 10', 'pictures/pushup1')";
+$q = "INSERT INTO exercises (type, level, name, description, workout, picture) VALUES ('pushup', 1.1, 'Wall Pushups', '$description', '1 set of 10', 'pictures/pushup1.jpg')";
 
 mysql_query($q) or DIE("Pushup 1.1 not inserted. ".mysql_error());
 
-$q = "INSERT INTO exercises (type, level, name, description, workout, picture) VALUES ('pushup', 1.2, 'Wall Pushups', '$description', '2 sets of 25', 'pictures/pushup1')";
+$q = "INSERT INTO exercises (type, level, name, description, workout, picture) VALUES ('pushup', 1.2, 'Wall Pushups', '$description', '2 sets of 25', 'pictures/pushup1.jpg')";
 
 mysql_query($q) or DIE("Pushup 1.2 not inserted. ".mysql_error());
 
-$q = "INSERT INTO exercises (type, level, name, description, workout, picture) VALUES ('pushup', 1.3, 'Wall Pushups', '$description', '3 sets of 50', 'pictures/pushup1')";
+$q = "INSERT INTO exercises (type, level, name, description, workout, picture) VALUES ('pushup', 1.3, 'Wall Pushups', '$description', '3 sets of 50', 'pictures/pushup1.jpg')";
 
 mysql_query($q) or DIE("Pushup 1.3 not inserted. ".mysql_error());
 

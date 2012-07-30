@@ -1,13 +1,13 @@
 <?php 
 session_start();
-include('conf.php'); 
+include('../conf/conf.php'); 
 ?>
 
 <html>
 <head>
 <title>Convict Conditioning Tracker</title>
-<script src="jquery.js" type="text/javascript"></script>
-<link rel="stylesheet" text="text/css" href="styles.css"></link>
+<script src="../static/jquery.js" type="text/javascript"></script>
+<link rel="stylesheet" text="text/css" href="../static/styles.css"></link>
 </head>
 
 <body>
@@ -17,7 +17,7 @@ include('conf.php');
 <ul>
 <li><a href="explore.php">Welcome</a>
 <li><a href="exploretracking.php">Explore Website</a>
-<li><a href="login.php">Back to Login</a>
+<li><a href="../login.php">Back to Login</a>
 </ul>
 </div>
 

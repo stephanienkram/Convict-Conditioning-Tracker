@@ -1,6 +1,6 @@
 <?php
 
-include('conf.php');
+include('conf/conf.php');
 session_start();
 
 if(isset($_GET['type'])){
@@ -32,9 +32,8 @@ if(isset($_GET['type'])){
     echo "<input type='submit' value='I have completed this exercise!'>";
     echo "</div>";
    
-   
     echo "<div id='right'>";
-    echo "<img src='" . $r['picture'] . "'>";
+    echo "<img src='" . $r['picture'] . "' height='500''>";
     echo "</div>";
     
 }    

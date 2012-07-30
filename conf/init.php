@@ -70,6 +70,6 @@ echo "DONE!!<br>";
 
 include('populate.php');
 
-header('location:login.php');
+header('location:../login.php');
 
 ?>
