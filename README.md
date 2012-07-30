@@ -7,4 +7,5 @@ This website will track a person's progression through the workouts, and will (e
 As of yet, the website is currently for private use only, as I don't know the copyright implications of supplying something that provides the workout program of a copyrighted workout, but that doesn't mean I can't show off my code.
 
 Screenshots:
-![Login screen][
+![Login screen](pictures/login.jpg)
+![Work screen](pictures/activepage.jpb)
